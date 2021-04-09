@@ -1,0 +1,199 @@
+/* ------------ОБНУЛЕНИЕ-------- */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 1;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.49);
+}
+
+ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+button:active,
+button:focus {
+    outline: none;
+    outline-width: 0 !important;
+}
+/* ----------ШРИФТЫ---------------- */
+@font-face {
+    font-family: 'Montserrat500';
+    src: url('../fonts/Montserrat-Regular.eot');
+    src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Montserrat-Regular.woff') format('woff'),
+    url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat300';
+    src: url('../fonts/Montserrat-Light.eot');
+    src: url('../fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Montserrat-Light.woff') format('woff'),
+    url('../fonts/Montserrat-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*@font-face {*/
+/*    font-family: 'RobotoMono-Regular';*/
+/*    src: url('../fonts/FuturaPT-Demi.eot');*/
+/*    src: url('../fonts/FuturaPT-Demi.eot?#iefix') format('embedded-opentype'),*/
+/*    url('../fonts/FuturaPT-Demi.woff') format('woff'),*/
+/*    url('../FuturaPT-Demi.ttf') format('truetype');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
+
+/* ----------- Общие стили --------------- */
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 15px;
+    font-family: Montserrat500, serif;
+}
+
+body {
+    font-family: Montserrat300, serif;
+    font-size: 16px;
+}
+.main__btn {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    font-family: Montserrat500, serif;
+    text-transform: uppercase;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: #4fcf21;
+    box-shadow: 0 5px 5px 0 #000000;
+    margin: 0 auto;
+}
+
+.main__btn:active {
+    box-shadow: 0 2px 5px 0 #000000;
+}
+
+h2 {
+    font-size: 36px;
+    font-family: RobotoMono-Regular, serif;
+    color: rgba(44, 42, 38, 1);
+    text-align: center;
+}
+
+header,
+section {
+    background-color: #E5E5E5;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 11;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #E5E5E5;
+    z-index: 10;
+}
+
+.header__body {
+    height: 70px;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.header__menu {
+    width: 100%;
+}
+
+.header__list {
+    display: flex;
+    align-items: center;
+}
+
+.header__list li {
+    padding: 5px 12px;
+    position: relative;
+    z-index: 12;
+}
+
+.header__list li.stretched {
+    flex: 1 1 auto;
+}
+
+.header__list li a {
+    font-family: Montserrat500, serif;
+    transition: all 0.3s ease 0s;
+}
+
+.header__burger {
+    display: none;
+}
+
+.header__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+}
