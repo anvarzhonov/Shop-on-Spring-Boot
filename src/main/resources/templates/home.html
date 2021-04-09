@@ -1,12 +1,49 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title th:text="${name}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
 </head>
 <body>
 
-<p th:text="'Hello, ' + ${name} + '!'" />
+<header class="header">
+    <div class="container">
+        <div class="header__body">
+            <nav class="header__menu">
+                <ul class="header__list">
+                    <li>
+                        <a class="header__link" href="#">О нас</a>
+                    </li>
+                    <li>
+                        <a class="header__link" href="#">Продукция</a>
+                    </li>
+                    <li class="stretched">
+                        <a class="header__link" href="#">Помощь</a>
+                    </li>
+                    <li>
+                        <a class="header__link" href="#">Войти</a>
+                    </li>
+                    <li>
+                        <a class="header__link" href="#">Оформить заказ</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__burger">
+                <span></span>
+            </div>
+<!--            <a class="header__logo" href="#">-->
+<!--                <picture>-->
+<!--                    <source srcset="img/logo.webp" type="image/webp">-->
+<!--                    <img src="img/logo.png" alt="Логотип">-->
+<!--                </picture>-->
+<!--            </a>-->
+        </div>
+    </div>
+</header>
 
+
+<script src="https://kit.fontawesome.com/c5e7c95c4e.js" crossorigin="anonymous"></script>
 </body>
 </html>
