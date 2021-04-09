@@ -1,4 +1,4 @@
-/* ------------ОБНУЛЕНИЕ-------- */
+﻿/* ------------ОБНУЛЕНИЕ-------- */
 * {
     padding: 0;
     margin: 0;
@@ -196,4 +196,36 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 12;
+}
+
+/* -----------offer------------- */
+.offer {
+    background: url(https://delo.ua/files/news/images/3590/58/picture2_ukraina-sokratila_359058_p0.jpg) no-repeat center top/ cover;
+    width: 100%;
+    text-align: center;
+
+}
+
+.offer__shadow {
+    box-shadow: -3px 250px 100px 10px #E5E5E5 inset;
+;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0 190px 0;
+}
+
+.offer__title {
+    font-family: RobotoMono-Regular;
+    font-size: 50px;
+    color: rgba(44, 42, 38, 1);
+}
+
+.offer__subtitle {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 22px;
+    max-width: 730px;
+    margin: 24px auto 50px auto;
+}
+.wave{
+    margin-bottom: -40px;
 }
