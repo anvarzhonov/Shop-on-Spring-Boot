@@ -108,6 +108,7 @@ button:focus {
 body {
     font-family: Montserrat300, serif;
     font-size: 16px;
+    background-color: #E5E5E5;
 }
 .main__btn {
     font-size: 16px;
@@ -229,3 +230,35 @@ section {
 .wave{
     margin-bottom: -40px;
 }
+/*Секция "О нас"*/
+.top-title {
+    margin: 0 auto;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 36px 0 40px;
+    /* position: relative; */
+}
+
+
+.top-title::after {
+
+    content: "";
+    display: block;
+    width: 75px;
+    height: 3px;
+    background-color: rgbA(0, 0, 255, 0.5);
+    margin: 30px auto 0;
+}
+
+.info {
+    letter-spacing: 2px;
+    line-height: 2;
+    margin-bottom: -40px;
+}
+
+.main_info{
+    background-color: grey;
+    margin: 100px 0;
+}
+/*=============================================================================*/
