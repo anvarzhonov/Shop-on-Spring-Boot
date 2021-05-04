@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>kskgks</title>
+    <title>Каталог</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet"/>
@@ -14,10 +14,10 @@
         <div class="products-caption">
             <p th:text="${el.key.name}"></p>
         </div>
-        <div class="catalog" th:each="product: ${el.value}">
-            <div class="catalog__item catalog__item-cart">
+        <div class="catalog">
+            <div class="catalog__item catalog__item-cart" th:each="product: ${el.value}">
                 <a href="#">
-                    <img src="https://okakao.com/wp-content/uploads/2021/04/muzhchina-iz-shokolada.jpeg"
+                    <img th:src="@{'/images/' + ${product.image} }"
                          class="catalog__item-photo">
                 </a>
                 <div class="catalog-desc">
