@@ -51,7 +51,7 @@ a:hover,
 a:visited,
 a:active {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.49);
+    color: #4c2822;
 }
 
 ul li {
@@ -197,6 +197,11 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 12;
+
+    font-family: RobotoMono-Regular;
+    font-size: 20px;
+    color: rgba(44, 42, 38, 1);
+
 }
 
 /* -----------offer------------- */
@@ -309,5 +314,42 @@ section {
     text-transform: uppercase;
     margin: 20px 0;
 }
-
 /*=============================================================================*/
+
+.catalog__item-cart{
+    margin: 9px;
+    width: 277px;
+    -webkit-transition: .1s ease;
+    -o-transition: .1s ease;
+    transition: .1s ease;
+}
+.catalog-desc {
+    font-size: 16px;
+}
+.catalog-desc__title{
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}
+.catalog-desc-price {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.catalog-desc-price__price{
+    margin-right: 10px;
+    position: relative;
+    padding-right: 20px;
+    border-right: 1px solid #c4c4c4;
+}
+.catalog__item-photo{
+    width: 280px;
+    height: 280px;
+}
