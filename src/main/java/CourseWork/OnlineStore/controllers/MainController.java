@@ -41,9 +41,9 @@ public class MainController {
         Iterable<ProductType> types =productTypeRepository.findAll();
         Map<ProductType, List<Product>> map = new HashMap<>();
         // Идет по каждому типу и для каждого типа в MAP закидывается ключ и значение.
-        types.forEach(type -> map.put(type,productRepository.findByProductType(type)));
-        model.addAttribute("map",map);
-        return "catalog/products";
+        types.forEach(type -> map.put(type, productRepository.findByProductType(type)));
+        model.addAttribute("map", map);
+        return "products";
     }
 
 }
