@@ -17,7 +17,7 @@
                         <a class="header__link" href="#">О нас</a>
                     </li>
                     <li>
-                        <a class="header__link" href="#">Продукция</a>
+                        <a class="header__link" th:href="@{/products}">Продукция</a>
                     </li>
                     <li class="stretched">
                         <a class="header__link" href="#">Помощь</a>
@@ -33,7 +33,7 @@
             <div class="header__burger">
                 <span></span>
             </div>
-            <a class="header__logo" href="#">
+            <a class="header__logo" th:href="@{/}">
                 <b>SweetChoco</b>
             </a>
         </div>
@@ -56,6 +56,7 @@
     <img class="wave" src="wave.svg"/>
 </section>
 
+<!-----Секция "О нас"---->
 <section class="about">
     <div class="container">
         <div class="top-title">О нас</div>
@@ -99,31 +100,33 @@
     </div>
 </section>
 <br><br><br><br><br>
+
+<!--Секция с каталогами товаров-->
 <section>
     <div class="container">
         <div class="top-title">Каталог</div>
         <div class="catalog">
-            <a href="#" class="catalog__item">
+            <a th:href="@{/products}" class="catalog__item">
                 <img src="https://okakao.com/wp-content/uploads/2020/03/shokoladnye-figurki.jpg" class="catalog__image">
                 <div class="catalog__title">Шоколадные фигурки</div>
             </a>
-            <a href="#" class="catalog__item">
+            <a th:href="@{/products}" class="catalog__item">
                 <img src="https://okakao.com/wp-content/uploads/2020/03/shokoladnye-kartiny.jpg" class="catalog__image">
                 <div class="catalog__title">Шоколадные картины</div>
             </a>
-            <a href="#" class="catalog__item">
+            <a th:href="@{/products}" class="catalog__item">
                 <img src="https://okakao.com/wp-content/uploads/2019/09/shokoladnaya-mashina-leksus.jpg" class="catalog__image">
                 <div class="catalog__title">Машины из шоколада</div>
             </a>
-            <a href="#" class="catalog__item">
+            <a th:href="@{/products}" class="catalog__item">
                 <img src="https://okakao.com/wp-content/uploads/2020/07/bukvy-shokoladnye.jpg" class="catalog__image">
                 <div class="catalog__title">Шоколадные наборы</div>
             </a>
-            <a href="#" class="catalog__item">
+            <a th:href="@{/products}" class="catalog__item">
                 <img src="https://okakao.com/wp-content/uploads/2020/10/lev-iz-shokolada.jpg" class="catalog__image">
                 <div class="catalog__title">Шоколадные скульптуры</div>
             </a>
-            <a href="#" class="catalog__item">
+            <a th:href="@{/products}" class="catalog__item">
                 <img src="https://okakao.com/wp-content/uploads/2020/03/sedobnye-bukety.jpg" class="catalog__image">
                 <div class="catalog__title">Съедобные букеты</div>
             </a>
