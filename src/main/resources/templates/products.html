@@ -8,11 +8,42 @@
 </head>
 <body>
 
-
+<header class="header">
+    <div class="container">
+        <div class="header__body">
+            <nav class="header__menu">
+                <ul class="header__list">
+                    <li>
+                        <a class="header__link" th:href="@{/}">О нас</a>
+                    </li>
+                    <li>
+                        <a class="header__link" th:href="@{/products}">Продукция</a>
+                    </li>
+                    <li class="stretched">
+                        <a class="header__link" href="#">Помощь</a>
+                    </li>
+                    <li>
+                        <a class="header__link" href="#">Войти</a>
+                    </li>
+                    <li>
+                        <a class="header__link" href="#">Оформить заказ</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__burger">
+                <span></span>
+            </div>
+            <a class="header__logo" th:href="@{/}">
+                <b>SweetChoco</b>
+            </a>
+        </div>
+    </div>
+</header>
+<br><br><br><br><br><br><br><br><br><br>
 <div class="container">
     <div class="products" th:each="el : ${map}">
-        <div class="products-caption">
-            <p th:text="${el.key.name}"></p>
+        <div class="products-caption" style="text-align: center; color: #4c2822">
+            <b><p th:text="${el.key.name}"></p></b>
         </div>
         <div class="catalog">
             <div class="catalog__item catalog__item-cart" th:each="product: ${el.value}">
