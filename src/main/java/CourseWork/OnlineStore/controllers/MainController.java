@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class MainController {
@@ -29,10 +27,9 @@ public class MainController {
     @GetMapping("/")
     public String greeting(Model model) {
         model.addAttribute("name", "Главная страница");
-
-
         return "home";
     }
+
 
     //Страница с каталогами
     @GetMapping("/products")
@@ -49,40 +46,14 @@ public class MainController {
         return "products";
     }
 
-    /* -------------------------Контроллеры для редактипования и добавления типов продукта-------------------------*/
-    @GetMapping("/productTypeList")
-    public String productTypeList(Model model) {
-        Iterable<ProductType> types = productTypeRepository.findAll();
-        model.addAttribute("types", types);
-        return "productTypeList";
+    @GetMapping("/products/{id}")
+    public String productDetails(@PathVariable(value = "id") long id, Model model){
+        Product product = productRepository.findById(id).orElse(null);
+        model.addAttribute("product", product);
+
+        return "catalog/product";
     }
 
-    @GetMapping("productTypeList/add")
-    public String productTypeListAdd(Model model) {
-        ProductType productType = new ProductType();
-        model.addAttribute("productType", productType);
-        return "productTypeForm";
-    }
 
-    @PostMapping("productTypeList/add")
-    public String productTypeListAddSubmit(@ModelAttribute ProductType productType, Model model){
-        productTypeRepository.save(productType);
-        model.addAttribute("types", productTypeRepository.findAll());
-        return "productTypeList";
-    }
 
-    @GetMapping("/productTypeList/delete/{productTypeId}")
-    public String productTypeListDelete(@PathVariable("productTypeId") long id, Model model) {
-        productTypeRepository.deleteById(id);
-        model.addAttribute("types", productTypeRepository.findAll());
-        return "productTypeList";
-    }
-
-    @GetMapping("/productTypeList/edit/{productTypeId}")
-    public String productTypeListEdit(@PathVariable("productTypeId") long id, Model model) {
-        ProductType productType = productTypeRepository.findById(id).orElse(null);
-        model.addAttribute("productType", productType);
-        return "productTypeForm";
-    }
-    /*==============================================================================================================*/
 }
