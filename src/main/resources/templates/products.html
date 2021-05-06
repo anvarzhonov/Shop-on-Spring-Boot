@@ -47,7 +47,7 @@
         </div>
         <div class="catalog">
             <div class="catalog__item catalog__item-cart" th:each="product: ${el.value}">
-                <a href="#">
+                <a th:href="'/products/' + ${product.id}">
                     <img th:src="@{'/images/' + ${product.image} }"
                          class="catalog__item-photo">
                 </a>

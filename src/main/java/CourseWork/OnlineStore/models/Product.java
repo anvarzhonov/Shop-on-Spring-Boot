@@ -19,6 +19,11 @@ public class Product {
     private String image;
 
 
+
+    @Column(length =65553)
+    @Type(type= "text")
+    private String description;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_type_id")
     private ProductType productType;
@@ -70,4 +75,12 @@ public class Product {
     public void setProductType(ProductType productType) {
         this.productType = productType;
     }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 }

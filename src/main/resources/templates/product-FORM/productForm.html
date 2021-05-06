@@ -52,6 +52,10 @@
         <label for="productName">Название фотографии</label>
         <input type="text" class="form-control" id="productPhoto" th:field="*{image}" required/>
 
+        <label for="productName">Описание продукта</label>
+        <input type="text" class="form-control" id="productDescription"
+               th:field="*{description}" required/>
+
         <label for="productName">Номер типа продукта</label>
         <input type="text" class="form-control" id="productIdType" th:field="*{productType}" required/>
     </div>
