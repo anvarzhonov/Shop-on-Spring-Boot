@@ -1,6 +1,5 @@
 package CourseWork.OnlineStore.models;
 
-import com.fasterxml.jackson.annotation.JacksonInject;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -19,16 +18,16 @@ public class Product {
     private String image;
 
 
-
-    @Column(length =65553)
-    @Type(type= "text")
+    @Column(length = 65553)
+    @Type(type = "text")
     private String description;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_type_id")
     private ProductType productType;
 
-    public Product() {}
+    public Product() {
+    }
 
     public Product(String name, Double price, String image) {
         this.name = name;
@@ -75,6 +74,7 @@ public class Product {
     public void setProductType(ProductType productType) {
         this.productType = productType;
     }
+
     public String getDescription() {
         return description;
     }
