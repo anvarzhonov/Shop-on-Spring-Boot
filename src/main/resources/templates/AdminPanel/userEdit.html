@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="UTF-8">
-    <title>Форма для добавления типов продуктов</title>
+    <title>Форма для редактирования пользователей   </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -19,7 +19,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Типы продуктов</a>
+        <a class="navbar-brand"  th:href="@{/}">Главная страница</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/productTypeList}">Типы продуктов
                         <span class="sr-only">(current)</span>
                     </a>
@@ -35,21 +35,29 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/productList}">Продукты</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" th:href="@{/admin/user}">Пользователи</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
-<form class="admin" th:action="@{/admin/productTypeList/add}" th:object="${productType}" method="post">
-    <input type="text" th:field="*{id}" hidden/>
-    <div class="form-group">
-        <label for="productName">Название</label>
-        <input type="text" class="form-control" id="productName" th:field="*{name}" required/>
+<br>
+<form class="admin" th:action="@{/admin/user}" method="post" th:object="${user}">
+    <!--    <input type="text" th:field="*{id}" hidden/>-->
+    <label for="username">Имя пользователя: </label>
+    <input type="text" name="username" id="username" th:field="*{username}" required>
+    <div th:each="role: ${roles}">
+            <label><input th:type="checkbox"
+                          th:name="${role}"
+                          th:value="${role}"
+                          th:text="${role}"
+                          th:checked="${#lists.contains(user.roles, role)}"></label>
     </div>
-    <p><input type="submit" class="btn btn-primary" value="Сохранить"/>
+
+
+    <input type="hidden" th:value="${user.id}" name="userId">
+    <button type="submit" class="btn btn-primary">Сохранить</button>
 </form>
 </body>
 </html>

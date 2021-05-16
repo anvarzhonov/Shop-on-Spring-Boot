@@ -14,19 +14,22 @@
             <nav class="header__menu">
                 <ul class="header__list">
                     <li>
+                        <a class="header__link" th:href="@{/login}">Авторизация</a>
+                    </li>
+                    <li>
                         <a class="header__link" href="#">О нас</a>
                     </li>
                     <li>
                         <a class="header__link" th:href="@{/products}">Продукция</a>
                     </li>
                     <li class="stretched">
-                        <a class="header__link" href="#">Помощь</a>
-                    </li>
-                    <li>
-                        <a class="header__link" href="#">Войти</a>
+                        <a class="header__link" href="#"></a>
                     </li>
                     <li>
                         <a class="header__link" href="#">Оформить заказ</a>
+                    </li>
+                    <li>
+                        <a class="header__link" th:href="@{/admin/user}">Панель администратора</a>
                     </li>
                 </ul>
             </nav>

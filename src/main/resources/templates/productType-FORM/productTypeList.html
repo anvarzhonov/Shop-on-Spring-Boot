@@ -27,18 +27,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/productTypeList}">Типы продуктов
+                    <a class="nav-link" th:href="@{/admin/productTypeList}">Типы продуктов
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/productList}">Продукты</a>
+                    <a class="nav-link" th:href="@{/admin/productList}">Продукты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/user}">Пользователи</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<br><br>
+
 <table class="table">
     <thead class="thead-dark">
     <th></th>
@@ -51,12 +54,12 @@
         <tr>
             <td th:text="${state.index + 1}"></td>
             <td th:text="${type.name}"></td>
-            <td><a th:href="@{'/productTypeList/edit/' + ${type.id}}" class="badge badge-primary">Редактировать</a></td>
-            <td><a th:href="@{'/productTypeList/delete/' + ${type.id}}" class="badge badge-danger">Удалить</a></td>
+            <td><a th:href="@{'/admin/productTypeList/edit/' + ${type.id}}" class="badge badge-primary">Редактировать</a></td>
+            <td><a th:href="@{'/admin/productTypeList/delete/' + ${type.id}}" class="badge badge-danger">Удалить</a></td>
         </tr>
     </div>
     <tr>
-        <td colspan="4" align="center"><a th:href="@{/productTypeList/add}" class="badge badge-success">Добавить</a>
+        <td colspan="4" align="center"><a th:href="@{/admin/productTypeList/add}" class="badge badge-success">Добавить</a>
         </td>
     </tr>
     </tbody>

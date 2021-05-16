@@ -29,6 +29,13 @@ public class MainController {
         model.addAttribute("name", "Главная страница");
         return "home";
     }
+    //Страница логина
+    @GetMapping("/login")
+    public String login(Model model){
+        model.addAttribute("name","Авторизация");
+        return "login";
+    }
+
 
 
     //Страница с каталогами

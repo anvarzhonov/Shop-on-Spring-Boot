@@ -1,18 +1,31 @@
 package CourseWork.OnlineStore.models;
+//package CourseWork.OnlineStore.models;
+//
+//import lombok.Data;
+//
+//import javax.persistence.*;
+//
+//@Entity
+//@Data
+//@Table(name = "roles")
+//public class Role {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id")
+//    private Long id;
+//
+//    @Column(name = "name")
+//    private String name;
+//}
 
-import lombok.Data;
 
-import javax.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
 
-@Entity
-@Data
-@Table(name = "roles")
-public class Role {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+public enum Role implements GrantedAuthority {
+    USER,ADMIN;
 
-    @Column(name = "name")
-    private String name;
+    @Override
+    public String getAuthority() {
+        return name();
+    }
 }

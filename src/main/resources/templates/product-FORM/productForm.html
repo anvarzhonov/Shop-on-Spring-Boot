@@ -28,19 +28,22 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/productTypeList}">Типы продуктов
+                    <a class="nav-link" th:href="@{/admin/productTypeList}">Типы продуктов
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/productList}">Продукты</a>
+                    <a class="nav-link" th:href="@{/admin/productList}">Продукты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/user}">Пользователи</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<br><br>
-<form class="admin" th:action="@{/productList/add}" th:object="${product}" method="post">
+
+<form class="admin" th:action="@{/admin/productList/add}" th:object="${product}" method="post">
     <input type="text" th:field="*{id}" hidden/>
     <div class="form-group">
         <label for="productName">Название</label>
