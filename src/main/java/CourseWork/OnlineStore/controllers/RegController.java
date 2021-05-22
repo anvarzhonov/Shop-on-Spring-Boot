@@ -5,6 +5,7 @@ import CourseWork.OnlineStore.models.User;
 import CourseWork.OnlineStore.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -22,11 +23,11 @@ public class RegController {
     }
 
     @PostMapping("/registration")
-    public String addUser(User user, Map<String, Object> model) {
+    public String addUser(User user, Model model) {
         User userFromDb = userRepo.findByUsername(user.getUsername());
 
         if (userFromDb != null) {
-            model.put("message", "User exists!");
+            model.addAttribute("message", "Ошибка! Пользователь с данным именем уже существует!");
             return "registration";
         }
 

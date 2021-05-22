@@ -41,6 +41,27 @@
         </div>
     </div>
 </div>
-
+<!--ОТЗЫВЫ-->
+<h2 style="text-align: center;color: #4c2822; margin-top: 40px; ">Отзывы</h2>
+<div class="review">
+    <img th:src="@{/images/albert.png}" alt="avatar">
+    <p><span>Марина Белова</span> г. Москва</p>
+    <p style="margin-top: 10px">Качество товара отличное, доставка быстрая.</p>
+</div>
+<div class="review">
+    <img th:src="@{/images/albert2.png}" alt="avatar">
+    <p><span>Алексей Фролов</span> г. Воронеж</p>
+    <p>Пришла посылка быстро, доставка была курьером.</p>
+</div>
+<!--<div class="container">-->
+<!--    <form class="admin" th:action="@{/products/{id} }" th:object="${product}" method="post">-->
+<!--        <input type="text" th:field="*{id}" hidden/>-->
+<!--        <div class="form-group">-->
+<!--            <label for="productName">Название</label>-->
+<!--            <input type="text" class="form-control" id="productName" th:field="*{name}" required/>-->
+<!--        </div>-->
+<!--        <p><input type="submit" class="btn btn-primary" value="Добавить отзыв о продукте"/>-->
+<!--    </form>-->
+<!--</div>-->
 </body>
 </html>

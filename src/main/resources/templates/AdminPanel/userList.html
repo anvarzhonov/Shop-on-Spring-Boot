@@ -45,18 +45,21 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
+                <th></th>
                 <th>Name</th>
                 <th>Role</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <div th:each="user: ${users}">
+            <div th:each="user, state: ${users}">
                 <tr>
+                    <td th:text="${state.index + 1}"></td>
                     <td th:text="${user.username}"></td>
                     <td th:text="${user.getRoles()}"></td>
 
                     <td><a th:href="@{'/admin/user/'+ ${user.id}}" class="badge badge-primary">Редактировать</a></td>
+                    <td><a th:href="@{'/admin/user/delete/' + ${user.id}}" class="badge badge-danger">Удалить</a></td>
                 </tr>
             </div>
         </tbody>

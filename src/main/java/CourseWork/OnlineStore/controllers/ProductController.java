@@ -25,24 +25,24 @@ public class ProductController {
         return "product-FORM/productList";
     }
 
-    @GetMapping("productList/add")
+    @GetMapping("/productList/add")
     public String productListAdd(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
         return "product-FORM/productForm";
     }
 
-    @PostMapping("productList/add")
+    @PostMapping("/productList/add")
     public String productListAddSubmit(@ModelAttribute Product product, Model model){
         productRepository.save(product);
-        model.addAttribute("product", productRepository.findAll());
+        model.addAttribute("products", productRepository.findAll());
         return "product-FORM/productList";
     }
 
     @GetMapping("/productList/delete/{productId}")
     public String productListDelete(@PathVariable("productId") long id, Model model) {
         productRepository.deleteById(id);
-        model.addAttribute("product", productRepository.findAll());
+        model.addAttribute("products", productRepository.findAll());
         return "product-FORM/productList";
     }
 

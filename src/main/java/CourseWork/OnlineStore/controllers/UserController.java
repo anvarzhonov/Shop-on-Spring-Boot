@@ -1,5 +1,6 @@
 package CourseWork.OnlineStore.controllers;
 
+import CourseWork.OnlineStore.models.Product;
 import CourseWork.OnlineStore.models.Role;
 import CourseWork.OnlineStore.models.User;
 import CourseWork.OnlineStore.repo.UserRepository;
@@ -55,7 +56,14 @@ public class UserController {
 
         userRepo.save(user);
 
-        return "redirect:/user";
+        return "redirect:/admin/user";
     }
+    @GetMapping("/delete/{user}")
+    public String userDelete(@PathVariable("user") long id, Model model) {
+        userRepo.deleteById(id);
+        model.addAttribute("user", userRepo.findAll());
+        return "redirect:/admin/user";
+    }
+
 
 }

@@ -1,10 +1,12 @@
 package CourseWork.OnlineStore.models;
 
+import lombok.Data;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
 @Entity(name = "product")
+@Data
 public class Product {
 
     @Id
@@ -35,38 +37,6 @@ public class Product {
         this.image = image;
     }
 
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public ProductType getProductType() {
         return productType;
     }
@@ -74,13 +44,4 @@ public class Product {
     public void setProductType(ProductType productType) {
         this.productType = productType;
     }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
 }

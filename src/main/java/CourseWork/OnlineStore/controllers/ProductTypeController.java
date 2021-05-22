@@ -22,14 +22,14 @@ public class ProductTypeController {
         return "productType-FORM/productTypeList";
     }
 
-    @GetMapping("productTypeList/add")
+    @GetMapping("/productTypeList/add")
     public String productTypeListAdd(Model model) {
         ProductType productType = new ProductType();
         model.addAttribute("productType", productType);
         return "productType-FORM/productTypeForm";
     }
 
-    @PostMapping("productTypeList/add")
+    @PostMapping("/productTypeList/add")
     public String productTypeListAddSubmit(@ModelAttribute ProductType productType, Model model){
         productTypeRepository.save(productType);
         model.addAttribute("types", productTypeRepository.findAll());
@@ -40,7 +40,7 @@ public class ProductTypeController {
     public String productTypeListDelete(@PathVariable("productTypeId") long id, Model model) {
         productTypeRepository.deleteById(id);
         model.addAttribute("types", productTypeRepository.findAll());
-        return "productType-FORM/productTypeList";
+        return "redirect:/admin/productTypeList";
     }
 
     //    редактирование типа продукта

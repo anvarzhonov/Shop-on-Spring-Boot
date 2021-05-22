@@ -1,16 +1,17 @@
 package CourseWork.OnlineStore.controllers;
 
+import CourseWork.OnlineStore.models.Message;
 import CourseWork.OnlineStore.models.Product;
 import CourseWork.OnlineStore.models.ProductType;
+import CourseWork.OnlineStore.models.User;
+import CourseWork.OnlineStore.repo.MessageRepository;
 import CourseWork.OnlineStore.repo.ProductRepository;
 import CourseWork.OnlineStore.repo.ProductTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -21,6 +22,8 @@ public class MainController {
     ProductRepository productRepository;
     @Autowired
     ProductTypeRepository productTypeRepository;
+    @Autowired
+    MessageRepository messageRepo;
 
 
     // Главная страница
@@ -56,10 +59,28 @@ public class MainController {
     @GetMapping("/products/{id}")
     public String productDetails(@PathVariable(value = "id") long id, Model model){
         Product product = productRepository.findById(id).orElse(null);
+
+        Iterable<Message> messages = messageRepo.findAll();
+
         model.addAttribute("product", product);
+        model.addAttribute("messages", messages);
 
         return "catalog/product";
     }
+//    @PostMapping("/products/{id}")
+//    public String addMessage(@PathVariable(value = "id") long id,
+//                             @AuthenticationPrincipal User user,
+//                             Model model,
+//                             @RequestParam String text){
+//
+//        Message message= new Message(text,user);
+//        messageRepo.save(message);
+//
+//        Iterable<Message> messages = messageRepo.findAll();
+//
+//        model.addAttribute("messages", messages);
+//        return "catalog/product";
+//    }
 
 
 
