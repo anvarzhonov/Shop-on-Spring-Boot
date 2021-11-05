@@ -1,1 +1,3 @@
-# Java-CW-sem4
+# Java CourseWork
+**Stack:**
+Spring Boot + Spring Security + MySQL + Thymeleaf 
